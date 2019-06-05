@@ -37,5 +37,23 @@ public class Player implements Serializable {
    @XmlElement 
    public void setRole(String role) { 
       this.role = role; 
-   }   
+   }
+
+   @Override
+   public boolean equals(Object object){
+      if(object == null){
+         return false;
+      }else if(!(object instanceof Player)){
+         return false;
+      }else {
+         Player player = (Player)object;
+         if(id == player.getId()
+            && jerseyName.equals(player.getJerseyName())
+            && role.equals(player.getRole())
+         ){
+            return true;
+         }			
+      }
+      return false;
+   }
 } 
