@@ -28,19 +28,19 @@ public class WebServiceTester  {
       //initialize the tester
       tester.init();
       
-      //test get all users Web Service Method
+      //test get all players Web Service Method
       tester.testGetAllPlayers();
       
-      //test get user Web Service Method 
+      //test get player Web Service Method 
       tester.testGetPlayer();
       
-      //test update user Web Service Method
+      //test update player Web Service Method
       tester.testUpdatePlayer();
       
-      //test add user Web Service Method
+      //test add player Web Service Method
       tester.testAddPlayer();
       
-      //test delete user Web Service Method
+      //test delete player Web Service Method
       tester.testDeletePlayer();
    }
    //Test: Get list of all players
