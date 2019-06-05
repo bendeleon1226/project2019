@@ -48,5 +48,59 @@ public class PlayerDao {
       } catch (IOException e) { 
          e.printStackTrace(); 
       } 
-   }    
+   }
+   public Player getPlayer(int id){
+	      List<Player> players = getAllPlayers();
+
+	      for(Player player: players){
+	         if(player.getId() == id){
+	            return player;
+	         }
+	      }
+	      return null;
+	}
+	public int addPlayer(Player pPlayer){
+	      List<Player> playerList = getAllPlayers();
+	      boolean playerExists = false;
+	      for(Player player: playerList){
+	         if(player.getId() == pPlayer.getId()){
+	            playerExists = true;
+	            break;
+	         }
+	      }		
+	      if(!playerExists){
+	         playerList.add(pPlayer);
+	         savePlayerList(playerList);
+	         return 1;
+	      }
+	      return 0;
+	   }
+
+	   public int updatePlayer(Player pPlayer){
+	      List<Player> playerList = getAllPlayers();
+
+	      for(Player player: playerList){
+	         if(player.getId() == pPlayer.getId()){
+	            int index = playerList.indexOf(player);
+	            playerList.set(index, pPlayer);
+	            savePlayerList(playerList);
+	            return 1;
+	         }
+	      }		
+	      return 0;
+	   }
+
+	   public int deletePlayer(int id){
+	      List<Player> playerList = getAllPlayers();
+
+	      for(Player player: playerList){
+	         if(player.getId() == id){
+	            int index = playerList.indexOf(player);			
+	            playerList.remove(index);
+	            savePlayerList(playerList);
+	            return 1;   
+	         }
+	      }		
+	      return 0;
+	   }
 }
