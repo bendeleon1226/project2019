@@ -7,6 +7,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 @Path("/BenService") 
 
+//how to call from postman
+//GET method
+//http://localhost:8080/RestFulWSJersey/restfulws/BenService/benteners
 public class PlayerService {  
    PlayerDao playerDao = new PlayerDao();  
    @GET 
